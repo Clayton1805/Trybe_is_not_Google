@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class Queue:
     def __init__(self):
         """Inicialize sua estrutura aqui"""
@@ -23,6 +24,3 @@ class Queue:
             return self.queue[index]
         else:
             raise IndexError
-# l = Queue()
-# l.enqueue(42)
-# l.search(-1)

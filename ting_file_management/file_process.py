@@ -11,8 +11,8 @@ def process(path_file, instance):
             "qtd_linhas": len(lines),
             "linhas_do_arquivo": lines,
         }
-        for o in instance.get_queue():
-            if o["nome_do_arquivo"] == path_file:
+        for obj in instance.get_queue():
+            if obj["nome_do_arquivo"] == path_file:
                 return None
         instance.enqueue(file)
         sys.stdout.write(str(file))
@@ -20,6 +20,15 @@ def process(path_file, instance):
 
 def remove(instance):
     """Aqui irá sua implementação"""
+    try:
+        instance.dequeue()
+        sys.stdout.write(
+            "Arquivo statics/arquivo_teste.txt removido com sucesso\n"
+        )
+    except IndexError:
+        sys.stdout.write(
+            "Não há elementos\n"
+        )
 
 
 def file_metadata(instance, position):

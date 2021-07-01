@@ -10,6 +10,9 @@ class Queue:
         """Aqui irá sua implementação"""
         return len(self.queue)
 
+    def get_queue(self):
+        return self.queue
+
     def enqueue(self, value):
         """Aqui irá sua implementação"""
         self.queue.append(value)
